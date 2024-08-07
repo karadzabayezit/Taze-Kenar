@@ -1,0 +1,74 @@
+@import "../../../../assets/styles";
+.container {
+  position: relative;
+  margin-top: 5rem;
+  background: #f7f7f7;
+  padding: 8rem 0;
+
+  .whyUs {
+    text-align: center;
+    padding: 0 2rem 6rem;
+    h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: $color-primary-dark;
+    }
+
+    p {
+      font-size: 1.8rem;
+      max-width: 92rem;
+      margin: 0 auto;
+    }
+  }
+
+  .heading {
+    width: 100%;
+    text-align: center;
+    color: $color-primary-darkest;
+    font-size: 3rem;
+  }
+  .p {
+    color: #6e6e6e;
+    width: 100%;
+    text-align: center;
+  }
+  .logos_container {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    & > * {
+      &:not(:first-child) {
+        margin: 0 1.5rem;
+      }
+    }
+    .block {
+      display: flex;
+      flex-shrink: 0;
+      & > * {
+        &:not(:first-child) {
+          margin: 0 1.5rem;
+        }
+      }
+      .logo {
+        height: 12rem;
+        width: 15rem;
+        padding: 0.5rem;
+        filter: invert(0.75);
+      }
+    }
+  }
+  .animate {
+    animation: logo-carusel 30s linear infinite;
+  }
+  @keyframes logo-carusel {
+    from {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(calc(-100%));
+    }
+    to {
+      transform: translateX(calc(-200%));
+    }
+  }
+}

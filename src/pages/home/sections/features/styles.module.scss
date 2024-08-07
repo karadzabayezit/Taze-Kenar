@@ -1,0 +1,74 @@
+@import "../../../../assets/styles";
+
+.features {
+  margin: -15rem 0 0rem 0;
+  padding: 20rem 1rem;
+  position: relative;
+  .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(0, 0, 0, 0.5),
+        rgba(5, 13, 27, 0.8)
+      ),
+      url(static/img/ashgabat.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+    @include respond(tab-port) {
+      clip-path: polygon(0 6%, 100% 0, 100% 94%, 0 100%);
+      padding: 10rem 5rem;
+    }
+    @include respond(phone) {
+      padding: 10rem 2rem;
+    }
+    & > * {
+      padding: 5rem 0;
+    }
+  }
+  .row {
+    display: flex;
+    justify-content: space-around;
+    width: 95%;
+    padding: 4rem;
+    gap: 3rem;
+    margin: 0 auto;
+    @include respond(tab-port) {
+      flex-direction: column;
+    }
+    @include respond(phone) {
+      width: 100%;
+      padding: 2rem 1rem;
+    }
+    &__item {
+      background-color: rgba(#f2f9ff, 0.9);
+      box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+      padding: 4rem 2rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-basis: 100%;
+      border-radius: 2px;
+      color: rgb(23, 32, 59);
+      .box {
+        text-align: center;
+        transition: all 0.6s;
+        padding-bottom: 3rem;
+        .icon {
+          height: 5rem;
+          width: 5rem;
+          stroke-width: 1.2;
+          margin-bottom: 0.5rem;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

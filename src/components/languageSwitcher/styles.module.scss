@@ -1,0 +1,70 @@
+.languages {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .language {
+    display: flex;
+    border-radius: 1px;
+    .arrow {
+      display: block;
+      margin-top: 0.3rem;
+
+      &::after {
+        content: "";
+        display: block;
+        margin-left: 0.7rem;
+        width: 8px;
+        height: 8px;
+        border-right: 2px;
+        border-bottom: 2px;
+        border-top: 0;
+        border-left: 0;
+        border-color: #fff;
+        border-style: solid;
+        transform: rotate(45deg);
+        transform-origin: center;
+        transition: all 0.2s ease-in-out;
+      }
+      // background-color: red;
+    }
+    .rotate {
+      margin-top: 0.5rem;
+      &::after {
+        transform: rotate(225deg);
+      }
+    }
+  }
+  &__menu {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    background-color: rgb(#1a3f69, 0.8);
+    // padding: 1rem;
+    border-radius: 0 0 0.4rem 0.4rem;
+    margin-top: 1rem;
+    z-index: 9;
+    transition: all 0.2s ease-in-out;
+
+    &__item {
+      width: 100%;
+    }
+  }
+  button {
+    border-radius: 0;
+    background-color: transparent;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      background-color: #255183;
+      border: 1px solid #255183;
+    }
+  }
+  .open {
+    visibility: visible;
+    opacity: 1;
+    top: 100%;
+  }
+}

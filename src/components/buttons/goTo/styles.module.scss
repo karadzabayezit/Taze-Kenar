@@ -1,0 +1,23 @@
+@import "./../../../assets/styles";
+.button {
+  background-color: transparent;
+  border: 1px solid $color-primary-dark;
+  color: $color-primary-dark;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  padding: 0.8rem 1.8rem;
+  border-radius: 0.5rem;
+  transition: all 0.1s ease-in-out;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  width: fit-content;
+  &:hover {
+    background-color: $color-primary-dark;
+    color: white;
+  }
+  & > svg {
+    margin-left: 0.5rem;
+    height: 1.7rem;
+  }
+}

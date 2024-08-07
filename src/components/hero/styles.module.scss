@@ -1,0 +1,43 @@
+@import "../../assets/styles";
+.container {
+  position: relative;
+  .img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    filter: brightness(0.5);
+  }
+  .centeredBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 60rem;
+    padding: 1rem 2rem;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    @include respond(phone) {
+      min-width: 100%;
+      left: 0;
+      top: 30%;
+      transform: translate(0, 0);
+    }
+  }
+  .cutted {
+    height: 95vh;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    @include respond(tab-port) {
+      clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    }
+    & ~ .centeredBox {
+      top: 40%;
+      text-wrap: nowrap;
+      @include respond(phone) {
+        text-wrap: wrap;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 30%;
+      }
+    }
+  }
+}

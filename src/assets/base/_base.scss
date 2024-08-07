@@ -1,0 +1,81 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  &:focus {
+    outline-color: #c7c7c7;
+    outline-style: solid;
+    outline-width: 2px;
+    outline-offset: 2px;
+  }
+}
+html {
+  //This defines what 1rem is
+  font-size: 62.5%;
+  @include respond(phone) {
+    font-size: 30%;
+  }
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+  @include respond(tab-land) {
+    font-size: 56.25%;
+  }
+  @include respond(big-desktop) {
+    font-size: 75%;
+  }
+}
+body {
+  box-sizing: border-box;
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 110vh;
+  font-size: 1.5rem;
+  color: #5a5a5a;
+  letter-spacing: 0.1rem;
+  overflow-x: hidden;
+}
+
+a {
+  font-weight: 400;
+  text-decoration: inherit;
+  letter-spacing: 0.03rem;
+  &:focus,
+  &:focus-visible {
+    outline-color: #868686;
+    outline-width: 2px;
+    outline-offset: 2px;
+  }
+}
+a:hover {
+  color: #c9daf3;
+}
+
+h1 {
+  font-size: 3.2rem;
+  line-height: 1.1;
+}
+
+button {
+  border: 1px solid transparent;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.2rem;
+  font-weight: 300;
+  font-family: inherit;
+  cursor: pointer;
+  &:focus,
+  &:focus-visible {
+    outline: #182649 1px;
+    outline-color: #1e2d4e;
+    outline-style: solid;
+    outline-width: 2px;
+    outline-offset: 2px;
+  }
+}
+::selection {
+  background-color: #1076a8b9;
+  color: white;
+}
