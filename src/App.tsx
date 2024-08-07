@@ -6,12 +6,12 @@ import LoadingOverlay from "./components/loader";
 
 import HomePage from "./pages/home";
 
-// const ServicesPage = lazy(() => import("./pages/services"));
-import ServicesPage from "./pages/services";
+const ServicesPage = lazy(() => import("./pages/services"));
+// import ServicesPage from "./pages/services";
 // const HomePage = lazy(() => import("./pages/home"));
 
-// const AboutPage = lazy(() => import("./pages/about"));
-import AboutPage from "./pages/about";
+const AboutPage = lazy(() => import("./pages/about"));
+// import AboutPage from "./pages/about";
 // const ContactPage = lazy(() => import('./pages/contact'));
 
 const router = createBrowserRouter([
