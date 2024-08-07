@@ -1,44 +1,31 @@
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import styles from "./styles.module.scss";
+import { Languages } from "lucide-react";
 
 const languages = [
   { code: "en", lang: "English" },
   { code: "ru", lang: "Русский" },
 ];
 
-const LanguageSwitcher = () => {
+const LanguageSwitcher = ({ className }: { className?: string }) => {
   const { i18n } = useTranslation();
-  const currLan = languages.find(({ code }) => code === i18n.language);
-  const [lang, setLang] = useState(currLan?.lang || "English");
-  const [open, setOpen] = useState(false);
 
-  const switchLng = (code: string, lang: string) => {
+  const switchLng = (code: string) => {
     i18n.changeLanguage(code);
-    setLang(lang);
-    setOpen(false);
   };
 
   return (
-    <div className={styles.languages}>
-      <button className={styles.language} onClick={() => setOpen(!open)}>
-        {lang}
-        <span
-          className={styles.arrow + " " + (open ? styles.rotate : "")}
-        ></span>
-      </button>
-      <div className={styles.languages__menu + " " + (open ? styles.open : "")}>
-        {languages.map(({ code, lang }) => (
-          <button
-            key={code}
-            onClick={() => switchLng(code, lang)}
-            className={styles.languages__menu__item}
-          >
-            {lang}
-          </button>
-        ))}
-      </div>
+    <div className={`${styles.languages} ${className}`}>
+      <Languages />
+      {languages.map(({ code, lang }) => (
+        <button
+          className={i18n.language === code ? styles.selected : ""}
+          onClick={() => switchLng(code)}
+        >
+          {lang}
+        </button>
+      ))}
     </div>
   );
 };

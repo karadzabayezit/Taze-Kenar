@@ -29,7 +29,7 @@ const About = () => {
       to: { y: 0, opacity: 1 },
     }),
     {
-      rootMargin: "10% 0%",
+      rootMargin: "-10% 0%",
       once: true,
     }
   );
@@ -54,7 +54,7 @@ const About = () => {
               <p className="paragraph u_margin_bottom_small">{p}</p>
             </div>
           ))}
-          <a href="#" className="btn_text">
+          <a href="#" className={styles.btn}>
             Learn more &rarr;
           </a>
         </div>

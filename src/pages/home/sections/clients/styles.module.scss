@@ -43,22 +43,19 @@
     }
     .block {
       display: flex;
-      flex-shrink: 0;
       & > * {
         &:not(:first-child) {
           margin: 0 1.5rem;
         }
       }
       .logo {
-        height: 12rem;
-        width: 15rem;
         padding: 0.5rem;
-        filter: invert(0.75);
+        height: 7rem;
       }
     }
   }
   .animate {
-    animation: logo-carusel 30s linear infinite;
+    animation: logo-carusel 20s linear infinite;
   }
   @keyframes logo-carusel {
     from {

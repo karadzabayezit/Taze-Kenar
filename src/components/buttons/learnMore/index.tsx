@@ -2,15 +2,22 @@ import { animated, useInView, useSpring } from "@react-spring/web";
 import "./styles.scss";
 
 const LearnMore = () => {
-  const [ref, inView] = useInView({ once: true });
   const fromBottom = useSpring({
-    opacity: inView ? 1 : 0,
-    transform: inView ? "translate(0, 0)" : "translate(0, 200%)",
+    opacity: 1,
+    transform: "translate(0, 0)",
     from: { opacity: 0, transform: "translate(0, 200%)" },
-    delay: 600,
+    delay: 800,
   });
+
+  const goTo = () => {
+    document.querySelector("#section_about")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
-    <animated.button ref={ref} style={fromBottom} className="learn_more">
+    <animated.button style={fromBottom} className="learn_more" onClick={goTo}>
       <span className="circle" aria-hidden="true">
         <span className="icon arrow"></span>
       </span>

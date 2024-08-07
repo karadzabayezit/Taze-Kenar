@@ -13,7 +13,7 @@ const Hero: FC<IProps> = ({ children, cut = false, src }) => {
   const headerAnimation = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    delay: 600,
+    delay: 300,
   });
   return (
     <animated.div style={headerAnimation} className={styles.container}>

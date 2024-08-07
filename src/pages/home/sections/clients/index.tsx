@@ -8,61 +8,48 @@ interface Props {
 }
 const logos = [
   {
-    title: "Vercel",
-    url: "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715881430/vercel_wordmark_dark_mhv8u8.svg",
+    title: "Dragon Oil",
+    url: "static/img/clients/dragonOil.png",
   },
   {
-    title: "Nextjs",
-    url: "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715881475/nextjs_logo_dark_gfkf8m.svg",
+    title: "Chalik Enerji",
+    url: "static/img/clients/chalik.jpg",
   },
   {
-    title: "Prime",
-    url: "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/t2awrrfzdvmg1chnzyfr.svg",
+    title: "BASF",
+    url: "static/img/clients/basf.png",
   },
   {
-    title: "Trustpilot",
-    url: "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/tkfspxqmjflfllbuqxsi.svg",
+    title: "Schlumberger",
+    url: "static/img/clients/schlumberger.jpg",
   },
   {
-    title: "Webflow",
-    url: "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276560/logos/nymiivu48d5lywhf9rpf.svg",
-  },
-
-  {
-    title: "Airbnb",
-    url: "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/pmblusboe7vkw8vxdknx.svg",
+    title: "Halliburton",
+    url: "static/img/clients/halliburton.png",
   },
   {
-    title: "Tina",
-    url: "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276560/logos/afqhiygywyphuou6xtxc.svg",
-  },
-  {
-    title: "Stackoverflow",
-    url: "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/ts1j4mkooxqmscgptafa.svg",
-  },
-  {
-    title: "mistral",
-    url: "https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/tyos2ayezryjskox3wzs.svg",
+    title: "Petronas",
+    url: "static/img/clients/petronas.png",
   },
 ];
 
 const LogoCarousel: FC<Props> = ({ animate = true, shadows = true }) => {
-  const [ref2, inView2] = useInView({ once: true, rootMargin: "-20% 0%" });
+  const [ref, inView] = useInView({ once: true, rootMargin: "-20% 0%" });
 
   const fromLeft = useSpring({
-    opacity: inView2 ? 1 : 0,
-    transform: inView2 ? "translate(0, 0)" : "translate(-100%, 0)",
+    opacity: inView ? 1 : 0,
+    transform: inView ? "translate(0, 0)" : "translate(-100%, 0)",
     from: { opacity: 0, transform: "translate(-100%, 0)" },
     delay: 200,
   });
   const fromRight = useSpring({
-    opacity: inView2 ? 1 : 0,
-    transform: inView2 ? "translate(0, 0)" : "translate(100%, 0)",
+    opacity: inView ? 1 : 0,
+    transform: inView ? "translate(0, 0)" : "translate(100%, 0)",
     from: { opacity: 0, transform: "translate(100%, 0)" },
     delay: 200,
   });
   return (
-    <section ref={ref2} className={styles.container}>
+    <section ref={ref} className={styles.container}>
       <animated.div style={fromLeft} className={styles.whyUs}>
         <h2>Why Choose Us?</h2>
         <p>
