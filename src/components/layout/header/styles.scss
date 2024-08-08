@@ -11,7 +11,7 @@
   backdrop-filter: blur(10px);
   transition: all 0.2s ease-in-out;
   @media screen and (max-width: 600px) {
-    padding: 1rem 6rem;
+    padding: 1rem 2rem;
   }
   @include respond(tab-port) {
     flex-direction: column;

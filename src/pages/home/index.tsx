@@ -19,7 +19,7 @@ const HomePage = () => {
           <span className={`heading_primary--main`}>taze kenar</span>
           <span className="heading_primary--sub u_margin_top_small">
             {t("subHero")}
-            <p className="u_margin_top_smallest">{t("established")} 2014</p>
+            <p className="u_margin_top_smallest">{t("established")} 2015</p>
           </span>
         </h1>
         <LearnMore />
