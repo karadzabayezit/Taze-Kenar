@@ -42,7 +42,7 @@ const Header = ({ t }: { t: any }) => {
       className={`header ${scrolled && "scrolled"}`}
     >
       <div className="logoContainer">
-        <span>TAZE KENAR</span>
+        <Link to={"/"}>TAZE KENAR</Link>
         <button className="menuButton" onClick={() => setOpen(!open)}>
           {open ? <X /> : <Menu />}
         </button>

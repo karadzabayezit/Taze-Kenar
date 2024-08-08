@@ -44,6 +44,7 @@ a {
   font-weight: 400;
   text-decoration: inherit;
   letter-spacing: 0.03rem;
+  color: rgb(255, 255, 255);
   &:focus,
   &:focus-visible {
     outline-color: #868686;
@@ -52,7 +53,7 @@ a {
   }
 }
 a:hover {
-  color: #c9daf3;
+  color: #e0ecff;
 }
 
 h1 {
@@ -79,4 +80,7 @@ button {
 ::selection {
   background-color: #1076a8b9;
   color: white;
+}
+svg {
+  color: rgb(255, 255, 255);
 }
