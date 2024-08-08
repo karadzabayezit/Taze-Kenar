@@ -18,7 +18,7 @@
   }
   .logoContainer {
     padding: 0.5rem 2rem;
-    color: white;
+    color: rgb(255, 255, 255) !important;
     width: 20rem;
     display: flex;
     justify-content: space-between;
@@ -27,6 +27,7 @@
     margin-right: 2rem;
     & > span {
       font-size: 1.5rem;
+      color: rgb(255, 255, 255);
     }
     .menuButton {
       background-color: transparent;

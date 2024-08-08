@@ -5,9 +5,9 @@
   line-height: 1.7;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgb(255, 255, 255);
-  background-color: #ffffff;
+  color-scheme: only light;
+  color: $color-primary-darkest;
+  background-color: rgb(255, 255, 255) !important;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,7 +17,7 @@
 @media (prefers-color-scheme: light) {
   :root {
     color: $color-primary-darkest;
-    background-color: #181818;
+    background-color: rgb(255, 255, 255) !important;
   }
   a:hover {
     color: #747bff;
