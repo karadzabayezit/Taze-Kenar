@@ -81,3 +81,16 @@ button {
   background-color: #1076a8b9;
   color: white;
 }
+//Scrollbar
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);
+}
+::-webkit-scrollbar-thumb {
+  background: #002b49;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #002b49e3;
+}
