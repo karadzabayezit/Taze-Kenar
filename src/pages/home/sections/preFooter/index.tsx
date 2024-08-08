@@ -1,7 +1,7 @@
 import { animated, useInView } from "@react-spring/web";
 import React from "react";
 import styles from "./styles.module.scss";
-const PreFooter = () => {
+const PreFooter = ({ t }: { t: any }) => {
   const [ref, springs] = useInView(() => ({ from: { y: 200 }, to: { y: 0 } }), {
     rootMargin: "-15% 0%",
     once: true,
@@ -15,13 +15,13 @@ const PreFooter = () => {
     <animated.div ref={ref} style={springs} className={styles.section}>
       <div className={styles.section__title}>
         <h3 className={`${styles.section__header} heading_secondary`}>
-          The best day to deal with us was one year ago.
+          {t("home_page.best_day_first")}
           <br />
-          The second best is today!
+          {t("home_page.best_day_second")}
         </h3>
       </div>
       <button className={styles.btn} onClick={sendEmail}>
-        Email us right now!
+        {t("email_us_now")}
       </button>
     </animated.div>
   );

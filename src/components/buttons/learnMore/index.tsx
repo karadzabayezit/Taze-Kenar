@@ -1,7 +1,9 @@
 import { animated, useInView, useSpring } from "@react-spring/web";
 import "./styles.scss";
+import { useTranslation } from "react-i18next";
 
 const LearnMore = () => {
+  const { t } = useTranslation();
   const fromBottom = useSpring({
     opacity: 1,
     transform: "translate(0, 0)",
@@ -21,7 +23,7 @@ const LearnMore = () => {
       <span className="circle" aria-hidden="true">
         <span className="icon arrow"></span>
       </span>
-      <span className="button_text">Learn More</span>
+      <span className="button_text">{t("learnMore")}</span>
     </animated.button>
   );
 };

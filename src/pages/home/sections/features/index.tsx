@@ -12,27 +12,23 @@ import styles from "./styles.module.scss";
 const cards = [
   {
     icon: <Building2 className={styles.icon} />,
-    heading: "Поставки для компаний",
-    p: "Надежные поставки строительных материалов для бизнеса с индивидуальным подходом и своевременной доставкой.",
+    translation: "supplies_for_companies",
   },
   {
     icon: <Truck className={styles.icon} />,
-    heading: "Доставка и логистика",
-    p: "Быстрая и надежная доставка материалов прямо на объект. Мы заботимся о сроках и качестве.",
+    translation: "delivery_and_logistics",
   },
   {
     icon: <BadgeDollarSign className={styles.icon} />,
-    heading: "Специальные предложения",
-    p: "Акции и скидки на строительные материалы. Следите за нашими выгодными предложениями!",
+    translation: "special_offers",
   },
   {
     icon: <MessagesSquare className={styles.icon} />,
-    heading: "Консультации и поддержка",
-    p: "Профессиональные консультации по выбору материалов. Поможем найти идеальное решение для вашего проекта.",
+    translation: "consulting_and_support",
   },
 ];
 
-const Features = () => {
+const Features = ({ t }: { t: any }) => {
   const [ref, inView] = useInView({ once: true, rootMargin: "-20% 0%" });
   const trail = useTrail(cards.length, {
     opacity: inView ? 1 : 0,
@@ -49,17 +45,19 @@ const Features = () => {
           <animated.div
             style={style}
             className={styles.row__item}
-            key={cards[index].heading}
+            key={cards[index].translation}
           >
             <div className={styles.box}>
               {cards[index].icon}
               <h3 className="heading_tertiary u_margin_bottom_small">
-                {cards[index].heading}
+                {t(`home_page.${cards[index].translation}.title`)}
               </h3>
-              <p className="feature_box__text">{cards[index].p}</p>
+              <p className="feature_box__text">
+                {t(`home_page.${cards[index].translation}.description`)}
+              </p>
             </div>
             <GoToButton link="/services">
-              Services <ChevronRight />
+              {t("services")} <ChevronRight />
             </GoToButton>
           </animated.div>
         ))}

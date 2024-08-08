@@ -5,6 +5,7 @@ import { animated, useInView, useSpring } from "@react-spring/web";
 interface Props {
   animate?: boolean;
   shadows?: boolean;
+  t: any;
 }
 const logos = [
   {
@@ -33,7 +34,7 @@ const logos = [
   },
 ];
 
-const LogoCarousel: FC<Props> = ({ animate = true, shadows = true }) => {
+const Partners: FC<Props> = ({ animate = true, shadows = true, t }) => {
   const [ref, inView] = useInView({ once: true, rootMargin: "-20% 0%" });
 
   const fromLeft = useSpring({
@@ -51,16 +52,12 @@ const LogoCarousel: FC<Props> = ({ animate = true, shadows = true }) => {
   return (
     <section ref={ref} className={styles.container}>
       <animated.div style={fromLeft} className={styles.whyUs}>
-        <h2>Why Choose Us?</h2>
-        <p>
-          At Taze Kenar, we prioritize your satisfaction and success. Our team
-          of experts is dedicated to providing top-notch services, ensuring that
-          every project we undertake meets your expectations and beyond.
-        </p>
+        <h2>{t("home_page.why_choose_us.title")}</h2>
+        <p>{t("home_page.why_choose_us.description")}</p>
       </animated.div>
       <animated.div style={fromRight}>
         <h2 className={`${styles.heading} u_margin_bottom_small`}>
-          Our clients:
+          {t("home_page.our_partners")}
         </h2>
         <div
           className={styles.logos_container}
@@ -88,11 +85,11 @@ const LogoCarousel: FC<Props> = ({ animate = true, shadows = true }) => {
           ))}
         </div>
         <p className={`${styles.p} heading_tertiary u_margin_top_small`}>
-          They trust us and win, contact us to win too.
+          {t("home_page.trust_and_win")}
         </p>
       </animated.div>
     </section>
   );
 };
 
-export default LogoCarousel;
+export default Partners;

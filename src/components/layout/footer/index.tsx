@@ -21,7 +21,7 @@ const Footer = ({ t }: { t: any }) => {
       <div className={styles.footer__logo}>TAZE KENAR</div>
       {/* <img src="img/icon.png" alt="TAZE KENAR" className="footer__logo" /> */}
       <p className={styles.footer__copyright}>
-        &copy; Copyright. All rights reserved.
+        &copy; Copyright. {t("all_rights")}
       </p>
     </footer>
   );
