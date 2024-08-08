@@ -5,8 +5,7 @@ import GoToButton from "../../../components/buttons/goTo";
 const services = [
   {
     translation: "reliable_supplies",
-    image:
-      "https://images.pexels.com/photos/4386375/pexels-photo-4386375.jpeg?w=480&h=320&fit=crop",
+    image: "static/img/services/supplies.jpeg",
   },
   {
     translation: "delivery_logistics",
@@ -14,8 +13,7 @@ const services = [
   },
   {
     translation: "special_offers",
-    image:
-      "https://images.pexels.com/photos/4488662/pexels-photo-4488662.jpeg?w=480&h=320&fit=crop",
+    image: "static/img/services/special_offers.jpeg",
   },
   {
     translation: "consultation_support",

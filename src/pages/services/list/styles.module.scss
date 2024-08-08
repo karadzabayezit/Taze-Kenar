@@ -33,6 +33,9 @@
     transition: all 0.3s ease-in-out;
     min-width: 28rem;
     padding-bottom: 5rem;
+    @include respond(phone) {
+      width: 85%;
+    }
     &:hover {
       transform: translateY(-10px) !important;
     }
