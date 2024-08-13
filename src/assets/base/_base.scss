@@ -94,3 +94,17 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background: #002b49e3;
 }
+.hero_img {
+  height: 12rem;
+  border-radius: 1.5rem;
+  object-fit: cover;
+  box-shadow: 0 0.3rem 2rem rgb(0, 0, 0, 0.7);
+  background-color: rgb(255, 255, 255, 0.6);
+  backdrop-filter: blur(0.5rem);
+  @include respond(tab-port) {
+    height: 10rem;
+  }
+  @include respond(phone) {
+    height: 6rem;
+  }
+}

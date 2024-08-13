@@ -15,6 +15,7 @@ const Hero: FC<IProps> = ({ children, cut = false, src }) => {
     from: { opacity: 0 },
     delay: 300,
   });
+
   return (
     <animated.div style={headerAnimation} className={styles.container}>
       <img className={`${styles.img} ${cut && styles.cutted}`} src={src}></img>

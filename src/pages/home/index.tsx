@@ -16,7 +16,9 @@ const HomePage = () => {
     <>
       <Hero src="static/img/hero.jpg" cut={true}>
         <h1 className={`heading_primary u_margin_top_big`}>
-          <span className={`heading_primary--main`}>taze kenar</span>
+          <span className={`heading_primary--main`}>
+            <img src="logo.png" alt="" className=" hero_img" />
+          </span>
           <span className="heading_primary--sub u_margin_top_small">
             {t("subHero")}
             <p className="u_margin_top_smallest">{t("established")} 2015</p>
