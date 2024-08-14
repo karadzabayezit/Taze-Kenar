@@ -1,44 +1,52 @@
-import { animated, useSpring } from "@react-spring/web";
+import Partners from "@/components/partners";
+import styles from "./styles.module.scss";
+import { useTranslation } from "react-i18next";
 
-import "./styles.scss";
+const imgs = [
+  "static/img/certificates/certificate2.jpg",
+  "static/img/certificates/certificate1.jpg",
+];
 
-const AboutPage = () => {
-  // const [springs, api] = useSpring({ from: { opacity: 0 }, to: { opacity: 1 } });
-
+const AboutUsPage = () => {
+  const { t } = useTranslation();
   return (
-    <animated.div className="page about">
-      <h2>Our Story</h2>
-      <p>
-        Founded in 2024, Taze Kenar is committed to delivering exceptional
-        services to our clients. Our journey began with a small team of
-        passionate individuals who believed in making a difference. Today, we
-        have grown into a respected company known for our integrity, excellence,
-        and innovation.
-      </p>
-      <h2>Our Mission</h2>
-      <p>
-        Our mission is to empower businesses with reliable and innovative
-        solutions. We strive to build lasting relationships with our clients by
-        consistently delivering high-quality services and exceeding
-        expectations.
-      </p>
-      <h2>Our Values</h2>
-      <ul>
-        <li>
-          Integrity: We adhere to the highest standards of honesty and
-          transparency in all our dealings.
-        </li>
-        <li>
-          Excellence: We are committed to providing top-tier services and
-          continuously improving our processes.
-        </li>
-        <li>
-          Innovation: We embrace new ideas and technologies to stay ahead in a
-          rapidly changing world.
-        </li>
-      </ul>
-    </animated.div>
+    <>
+      <div className={styles.aboutUs}>
+        <div className={styles.hero}>
+          <h1 className="heading_secondary">About Taze Kenar</h1>
+          <p className="heading_secondary--sub">
+            We are a forward-thinking company dedicated to excellence in
+            construction and logistics. Our mission is to deliver high-quality
+            solutions tailored to the unique needs of our clients.
+          </p>
+        </div>
+        <div className={styles.aboutUs__text}>
+          <p className="heading_secondary--sub">
+            Taze Kenar is a modern and dynamic company specializing in the
+            supply of building materials, logistics, and project support within
+            the oil and gas industry. Our goal is to provide high-quality
+            solutions tailored to the unique needs of each client. We take pride
+            in our experience and numerous successful projects that have helped
+            our partners achieve significant results. Our team of experts
+            combines deep knowledge with an innovative approach, enabling us to
+            turn the boldest ideas into reality. We are committed to sustainable
+            development and actively support the United Nations Sustainable
+            Development Goals (SDGs) by utilizing eco-friendly materials and
+            practices.
+          </p>
+        </div>
+        <div className={styles.certificates}>
+          <h1 className="heading_secondary">Certificates & Licenses:</h1>
+          <div className={styles.certificates__imgs}>
+            {imgs.map((src) => (
+              <img className={styles.img} src={src} alt={src} />
+            ))}
+          </div>
+        </div>
+      </div>
+      <Partners t={t} />
+    </>
   );
 };
 
-export default AboutPage;
+export default AboutUsPage;

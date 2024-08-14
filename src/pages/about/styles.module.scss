@@ -1,0 +1,55 @@
+@import "@/assets/styles"; // Assuming you have a variables.scss
+.aboutUs {
+  justify-content: center;
+  .hero {
+    padding: 6rem 10rem;
+    text-align: center;
+    background-color: rgb(244, 244, 244);
+    @include respond(phone) {
+      padding: 4rem 1rem;
+    }
+  }
+  &__text {
+    padding: 2rem 12rem;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 20rem;
+      background-color: $color-primary-dark;
+      top: 0;
+      left: 12rem;
+    }
+    @include respond(phone) {
+      padding: 2rem 2rem;
+      &::after {
+        left: 2rem;
+      }
+    }
+  }
+  .certificates {
+    padding: 2rem 0;
+    text-align: center;
+    &__imgs {
+      display: flex;
+      padding: 6rem 2rem;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      @include respond(phone) {
+        flex-direction: column;
+      }
+      .img {
+        width: 30rem;
+        object-fit: contain;
+        box-shadow: 0 0.5rem 2rem rgba($color-primary-dark, 0.3);
+        border-radius: 0.4rem;
+        height: fit-content;
+        &:hover {
+          transform: scale(1.5);
+        }
+      }
+    }
+  }
+}

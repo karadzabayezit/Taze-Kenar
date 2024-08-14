@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./styles.module.scss";
 
-const footerList = ["home", "services", "about", "careers", "blog"];
+const footerList = ["home", "services", "about", "contact"];
 
 const Footer = ({ t }: { t: any }) => {
   return (

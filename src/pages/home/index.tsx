@@ -5,7 +5,7 @@ import LearnMore from "../../components/buttons/learnMore";
 import CanvasCursor from "../../components/canvasCursor";
 //Sections
 import PreFooter from "./sections/preFooter";
-import Partners from "./sections/partners";
+import Partners from "../../components/partners";
 import Features from "./sections/features";
 import About from "./sections/about";
 
