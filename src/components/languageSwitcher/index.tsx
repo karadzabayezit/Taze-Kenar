@@ -20,6 +20,7 @@ const LanguageSwitcher = ({ className }: { className?: string }) => {
       <Languages />
       {languages.map(({ code, lang }) => (
         <button
+          key={code}
           className={i18n.language === code ? styles.selected : ""}
           onClick={() => switchLng(code)}
         >

@@ -15,11 +15,15 @@ const Header = ({ t }: { t: any }) => {
   const [open, setOpen] = useState(false);
 
   const handleScroll = () => {
-    setScrolled(window.scrollY > 60);
+    setScrolled(window.scrollY > 120);
   };
 
+  const clickAway = () => {
+    setOpen(false);
+  };
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -37,32 +41,38 @@ const Header = ({ t }: { t: any }) => {
   });
 
   return (
-    <animated.div
-      style={fromTop}
-      className={`header ${scrolled && "scrolled"}`}
-    >
-      <div className="logoContainer">
-        <Link to={"/"}>TAZE KENAR</Link>
-        <button className="menuButton" onClick={() => setOpen(!open)}>
-          {open ? <X /> : <Menu />}
-        </button>
-      </div>
-      <div className={`menu ${open ? "open" : ""}`}>
-        <div className={`links`}>
-          {links.map((title) => (
-            <Link
-              key={title}
-              to={`/${title}`}
-              className={title === path ? "active link" : "link"}
-            >
-              {t(title)}
-            </Link>
-          ))}
+    <>
+      <div
+        className={`back ${open ? "backOpen" : ""}`}
+        onClick={clickAway}
+      ></div>
+      <animated.div
+        style={fromTop}
+        className={`header ${scrolled && "scrolled"}`}
+      >
+        <div className="logoContainer">
+          <Link to={"/"}>TAZE KENAR</Link>
+          <button className="menuButton" onClick={() => setOpen(!open)}>
+            {open ? <X /> : <Menu />}
+          </button>
         </div>
-        <LanguageSwitcher className={`langSwitcher2 `} />
-      </div>
-      <LanguageSwitcher className={`langSwitcher `} />
-    </animated.div>
+        <div className={`menu ${open ? "open" : ""}`}>
+          <div className={`links`}>
+            {links.map((title) => (
+              <Link
+                key={title}
+                to={`/${title}`}
+                className={title === path ? "active link" : "link"}
+              >
+                {t(title)}
+              </Link>
+            ))}
+          </div>
+          <LanguageSwitcher className={`langSwitcher2 `} />
+        </div>
+        <LanguageSwitcher className={`langSwitcher `} />
+      </animated.div>
+    </>
   );
 };
 

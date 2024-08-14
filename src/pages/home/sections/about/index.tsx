@@ -1,6 +1,7 @@
 import { animated, useInView } from "@react-spring/web";
 
 import styles from "./styles.module.scss";
+import { Link } from "react-router-dom";
 
 const composition = [
   { img: "static/img/water.png", p: "1" },
@@ -41,9 +42,9 @@ const About = ({ t }: { t: any }) => {
               </p>
             </div>
           ))}
-          <a href="#" className={styles.btn}>
-            {t("learnMore")} &rarr;
-          </a>
+          <Link to="/services" className={styles.btn}>
+            {t("learnMore")} about us &rarr;
+          </Link>
         </div>
 
         <div className={styles.composition}>

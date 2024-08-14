@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./styles.module.scss";
 
 const footerList = ["home", "services", "about", "careers", "blog"];
@@ -11,9 +12,9 @@ const Footer = ({ t }: { t: any }) => {
       <ul className={styles.footer__nav}>
         {footerList.map((name) => (
           <li className={styles.footer__item} key={name}>
-            <a className={styles.footer__link} href="#">
+            <Link className={styles.footer__link} to={name}>
               {t(name)}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
