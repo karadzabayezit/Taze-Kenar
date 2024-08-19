@@ -14,7 +14,7 @@ const HomePage = () => {
 
   return (
     <>
-      <Hero src="static/img/hero.jpg" cut={true}>
+      <Hero src="static/img/bitaraplik_yol.jpg" cut={true}>
         <h1 className={`heading_primary u_margin_top_big`}>
           <span className={`heading_primary--main`}>
             <img src="logo.png" alt="" className=" hero_img" />

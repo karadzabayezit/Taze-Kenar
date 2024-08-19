@@ -8,7 +8,7 @@ const PreFooter = ({ t }: { t: any }) => {
   });
 
   function sendEmail() {
-    window.location.href = "mailto:bayezitkarajaew@gmail.com";
+    window.location.href = "mailto:contact@tazekenar.com";
   }
 
   return (

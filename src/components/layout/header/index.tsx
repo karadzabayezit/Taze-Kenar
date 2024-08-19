@@ -22,6 +22,9 @@ const Header = ({ t }: { t: any }) => {
     setOpen(false);
   };
   useEffect(() => {
+    if (window.scrollY < 120) setOpen(false);
+  }, [pathname]);
+  useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
     return () => {

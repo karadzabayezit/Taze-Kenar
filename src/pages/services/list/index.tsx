@@ -83,7 +83,10 @@ const ServicesList = ({ t }: { t: any }) => {
                 {t(`services_page.${services[index].translation}.description`)}
               </p>
             </div>
-            <GoToButton className={styles.emailUs}>
+            <GoToButton
+              className={styles.emailUs}
+              link={"mailto:contact@tazekenar.com"}
+            >
               {t("email_us")} <SendHorizonal />
             </GoToButton>
           </animated.div>

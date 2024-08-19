@@ -7,7 +7,8 @@ const Footer = ({ t }: { t: any }) => {
   return (
     <footer className={styles.footer}>
       <div className={styles.contacts}>
-        <p>example@gmail.com</p> <p>+993 6x xxxxxx</p>
+        <a href="mailto:contact@tazekenar.com">contact@tazekenar.com</a>
+        <a href="tel:+99363997225">+993 63 997 225</a>
       </div>
       <ul className={styles.footer__nav}>
         {footerList.map((name) => (

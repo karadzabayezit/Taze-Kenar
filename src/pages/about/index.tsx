@@ -1,6 +1,7 @@
 import Partners from "@/components/partners";
 import styles from "./styles.module.scss";
 import { useTranslation } from "react-i18next";
+import { useSpring, animated } from "@react-spring/web";
 
 const imgs = [
   "static/img/certificates/certificate2.jpg",
@@ -9,9 +10,14 @@ const imgs = [
 
 const AboutUsPage = () => {
   const { t } = useTranslation();
+  const headerAnimation = useSpring({
+    opacity: 1,
+    from: { opacity: 0 },
+    delay: 300,
+  });
   return (
     <>
-      <div className={styles.aboutUs}>
+      <animated.div style={headerAnimation} className={styles.aboutUs}>
         <div className={styles.hero}>
           <h1 className="heading_secondary">About Taze Kenar</h1>
           <p className="heading_secondary--sub">
@@ -43,7 +49,7 @@ const AboutUsPage = () => {
             ))}
           </div>
         </div>
-      </div>
+      </animated.div>
       <Partners t={t} />
     </>
   );
